@@ -1,0 +1,3 @@
+BUSCO ou o GTDB Tk têm wrappers oficiais
+prokka ()
+metaEuK

@@ -1,0 +1,9 @@
+Assuming unrestricted shared filesystem usage.
+host: Rodolfo
+Building DAG of jobs...
+MissingInputException in rule anotar_bacterias in file "C:\Users\rodol\OneDrive\Documentos\GitHub\snakemake-mag-annotation-\Snakefile", line 7:
+Missing input files for rule anotar_bacterias:
+    output: resultados/anotacao/amostra_teste
+    wildcards: amostra=amostra_teste
+    affected files:
+        dados/amostra_teste.fasta
