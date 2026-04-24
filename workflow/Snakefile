@@ -2,13 +2,13 @@ import os
 
 samples = {}
 config_file = "config/samples.tsv"
+SAMPLES = ["amostra_teste"]
 
 if os.path.exists(config_file):
     with open(config_file, "r") as f:
-        # Pula a primeira linha (cabeçalho)
+        
         next(f) 
         for line in f:
-            # O split() sem nada dentro corta por qualquer espaço ou tab
             parts = line.strip().split()
             if len(parts) >= 2:
                 samples[parts[0]] = parts[1]
@@ -17,11 +17,11 @@ else:
 
 rule all:
     input:
-        expand("results/anotacao/{amostra}", amostra=samples.keys())
+        expand("results/anotacao/{amostra}", amostra=SAMPLES),
+        expand("results/metaeuk/{amostra}/resultados.fas", amostra=SAMPLES)
 
 rule anotar_bacterias:
     input:
-        # Aqui garantimos que ele retorna o caminho correto
         fasta=lambda wildcards: samples[wildcards.amostra]
     output:
         outdir=directory("results/anotacao/{amostra}")
@@ -32,4 +32,19 @@ rule anotar_bacterias:
         prefix="resultado_final"
     wrapper:
         "file://../snakemake-wrappers/bio/prokka"
+
+
+rule correr_metaeuk:
+    input:
+        contigs="data/{amostra}.fasta",
+        # Agora sim, apontamos para o dicionário verdadeiro!
+        db="data/db/uniprot_sprot.fasta" 
+    output:
+        fas="results/metaeuk/{amostra}/resultados.fas"
+    params:
+        out_prefix="results/metaeuk/{amostra}/resultados",
+        tmp_dir="results/metaeuk/{amostra}/tmp_metaeuk"
+    threads: 2
+    wrapper:
+        "file://../snakemake-wrappers/bio/metaeuk"
         
