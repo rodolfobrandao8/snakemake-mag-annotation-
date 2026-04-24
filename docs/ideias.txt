@@ -1,0 +1,11 @@
+BUSCO ou o GTDB Tk têm wrappers oficiais
+prokka (bakta?)
+metaEuK precisa de uma base de dados de referência (como o UniProt ou o MMETSP)
+
+Qualidade (BUSCO ou CheckM2): "A minha MAG presta?"
+
+Taxonomia (GTDB-Tk): "Quem é este bicho?" (Apenas para bactérias/arqueias).
+
+Classificação (Tiara): "Isto é bactéria ou eucariota?" (Para decidires o próximo passo).
+
+Anotação (Prokka/Bakta para Proc | MetaEuk para Euk): "O que é que este bicho faz? Que proteínas tem?"

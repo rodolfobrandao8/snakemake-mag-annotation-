@@ -1,0 +1,35 @@
+import os
+
+samples = {}
+config_file = "config/samples.tsv"
+
+if os.path.exists(config_file):
+    with open(config_file, "r") as f:
+        # Pula a primeira linha (cabeçalho)
+        next(f) 
+        for line in f:
+            # O split() sem nada dentro corta por qualquer espaço ou tab
+            parts = line.strip().split()
+            if len(parts) >= 2:
+                samples[parts[0]] = parts[1]
+else:
+    print(f"\n--- ERRO: Ficheiro {config_file} não encontrado! ---\n")
+
+rule all:
+    input:
+        expand("results/anotacao/{amostra}", amostra=samples.keys())
+
+rule anotar_bacterias:
+    input:
+        # Aqui garantimos que ele retorna o caminho correto
+        fasta=lambda wildcards: samples[wildcards.amostra]
+    output:
+        outdir=directory("results/anotacao/{amostra}")
+    log:
+        "logs/prokka_{amostra}.log"
+    threads: 2
+    params:
+        prefix="resultado_final"
+    wrapper:
+        "file://../snakemake-wrappers/bio/prokka"
+        
