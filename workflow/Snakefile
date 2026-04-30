@@ -6,7 +6,6 @@ SAMPLES = ["amostra_teste"]
 
 if os.path.exists(config_file):
     with open(config_file, "r") as f:
-        
         next(f) 
         for line in f:
             parts = line.strip().split()
@@ -17,34 +16,34 @@ else:
 
 rule all:
     input:
-        expand("results/anotacao/{amostra}", amostra=SAMPLES),
+        expand("results/anotacao/{amostra}/resultado_final.gff", amostra=SAMPLES),
+        expand("results/anotacao/{amostra}/resultado_final.faa", amostra=SAMPLES),
         expand("results/metaeuk/{amostra}/resultados.fas", amostra=SAMPLES)
 
 rule anotar_bacterias:
     input:
         fasta=lambda wildcards: samples[wildcards.amostra]
     output:
-        outdir=directory("results/anotacao/{amostra}")
+        gff="results/anotacao/{amostra}/resultado_final.gff",
+        faa="results/anotacao/{amostra}/resultado_final.faa"
     log:
         "logs/prokka_{amostra}.log"
     threads: 2
     params:
-        prefix="resultado_final"
+        extra="" 
     wrapper:
-        "file://../snakemake-wrappers/bio/prokka"
+        "file:///mnt/c/Users/rodol/OneDrive/Documentos/GitHub/snakemake-wrappers/bio/prokka"
 
 
 rule correr_metaeuk:
     input:
-        contigs="data/{amostra}.fasta",
-        # Agora sim, apontamos para o dicionário verdadeiro!
+        fasta="data/{amostra}.fasta", 
         db="data/db/uniprot_sprot.fasta" 
     output:
         fas="results/metaeuk/{amostra}/resultados.fas"
     params:
-        out_prefix="results/metaeuk/{amostra}/resultados",
-        tmp_dir="results/metaeuk/{amostra}/tmp_metaeuk"
+        extra="" 
     threads: 2
     wrapper:
-        "file://../snakemake-wrappers/bio/metaeuk"
+        "file:///mnt/c/Users/rodol/OneDrive/Documentos/GitHub/snakemake-wrappers/bio/metaeuk"
         
