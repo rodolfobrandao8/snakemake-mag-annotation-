@@ -1,1 +1,3 @@
 # Ficheiro de configurações para o workflow do MAG Annotation
+gtdbtk_db: "/caminho/verdadeiro/para/a/base_de_dados"
+mags_ext: "fasta"

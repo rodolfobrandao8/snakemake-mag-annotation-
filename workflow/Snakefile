@@ -46,4 +46,18 @@ rule correr_metaeuk:
     threads: 2
     wrapper:
         "file:///mnt/c/Users/rodol/OneDrive/Documentos/GitHub/snakemake-wrappers/bio/metaeuk"
+
+
+rule classificar_taxonomia_gtdbtk:
+    input:
+        "results/mags/" 
+    output:
+        "results/taxonomia/gtdbtk.summary.tsv"
+    params:
+        db_path=config["gtdbtk_db"],
+        extension=config["mags_ext"],
+        extra=""
+    threads: 8 
+    wrapper:
+        "file:///mnt/c/Users/rodol/OneDrive/Documentos/GitHub/snakemake-wrappers/bio/gtdb-tk"
         
