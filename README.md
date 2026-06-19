@@ -1,6 +1,5 @@
 # Development of a Functional Annotation and Taxonomic Classification Workflow for Metagenome-Assembled Genomes
 
-Development of an Integrated Functional Annotation Workflow for Metagenome-Assembled Genomes.
 
 **Author:** Rodolfo Ferreira  
 **Institution:** University of Minho  
