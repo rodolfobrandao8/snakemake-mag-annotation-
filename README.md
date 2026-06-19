@@ -17,11 +17,15 @@ This repository contains the deliverables and source code for the project
 | Branch | Contents |
 |--------|----------|
 | [`main`](https://github.com/RodolfoFerreira/Projeto-Bioinf/tree/main) | Project documents, paper, and deliverables (this branch) |
-| [`pipeline`](https://github.com/RodolfoFerreira/Projeto-Bioinf/tree/pipeline) | Snakemake workflow source code, environments, and configuration files |
+| [`Snakemake-Workflow`](https://github.com/RodolfoFerreira/Projeto-Bioinf/tree/Snakemake-Workflow) | Snakemake workflow source code, environments, and configuration files |
 
 ---
 
 ## Documents
+
+### Interim Paper (State of the Art)
+Preliminary paper containing the project introduction, contextualization of the multi-kingdom annotation challenge, and a comprehensive state-of-the-art review of current bioinformatics tools for metagenomics.
+
 
 ### Project Presentation
 Slide deck presenting the project objectives, the multi-kingdom pipeline architecture, and the biological validation using an anaerobic biomass dataset.
@@ -47,4 +51,4 @@ Key features of the developed workflow:
 - **Metabolic Profiling:** Enables rapid filtering of KEGG Orthology (KO) identifiers, COG categories, and UniProt homologies, directly supporting downstream community metabolic modeling.
 
 For installation prerequisites and execution instructions, see the 
-[`pipeline` branch](https://github.com/RodolfoFerreira/Projeto-Bioinf/tree/pipeline).
+[`Snakemake-Workflow` branch](https://github.com/RodolfoFerreira/Projeto-Bioinf/tree/Snakemake-Workflow).
