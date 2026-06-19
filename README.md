@@ -16,8 +16,8 @@ This repository contains the deliverables and source code for the project
 
 | Branch | Contents |
 |--------|----------|
-| [`main`](https://github.com/RodolfoFerreira/Projeto-Bioinf/tree/main) | Project documents, paper, and deliverables (this branch) |
-| [`pipeline`](https://github.com/RodolfoFerreira/Projeto-Bioinf/tree/pipeline) | Snakemake workflow source code, environments, and configuration files |
+| [`main`] | Project documents, paper, and deliverables (this branch) |
+| [`Snakemake-Workflow`] | Snakemake workflow source code, environments, and configuration files |
 
 ---
 
