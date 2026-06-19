@@ -1,4 +1,5 @@
-# Bioinformatics workflow for the functional annotation of multi-kingdom MAGs using Snakemake
+# Bioinformatics workflow for taxonomic classification and functional annotation of multi-kingdom MAGs using Snakemake.
+
 
 Development of an Integrated Functional Annotation Workflow for Metagenome-Assembled Genomes.
 
@@ -15,36 +16,22 @@ This repository contains the deliverables and source code for the project
 
 | Branch | Contents |
 |--------|----------|
-<<<<<<< Updated upstream
 | [`main`](https://github.com/RodolfoFerreira/Projeto-Bioinf/tree/main) | Project documents, paper, and deliverables (this branch) |
-| [`Snakemake-Workflow`](https://github.com/RodolfoFerreira/Projeto-Bioinf/tree/Snakemake-Workflow) | Snakemake workflow source code, environments, and configuration files |
-=======
-| [`main`]| Project documents, paper, and deliverables (this branch) |
-| [`Snakemake-Workflow`]| Snakemake workflow source code, environments, and configuration files |
->>>>>>> Stashed changes
+| [`pipeline`](https://github.com/RodolfoFerreira/Projeto-Bioinf/tree/pipeline) | Snakemake workflow source code, environments, and configuration files |
 
 ---
 
 ## Documents
 
-<<<<<<< Updated upstream
-### Interim Paper (State of the Art)
-Preliminary paper containing the project introduction, contextualization of the multi-kingdom annotation challenge, and a comprehensive state-of-the-art review of current bioinformatics tools for metagenomics.
-
-
 ### Project Presentation
-=======
-### 1. Interim Paper (State of the Art)
-Preliminary paper containing the project introduction, contextualization of the multi-kingdom annotation challenge, and a comprehensive state-of-the-art review of current bioinformatics tools for metagenomics.
-
-
-### 2. Project Presentation
->>>>>>> Stashed changes
 Slide deck presenting the project objectives, the multi-kingdom pipeline architecture, and the biological validation using an anaerobic biomass dataset.
 
+[Apresentacao_Projeto.pdf](./Apresentacao_Projeto.pdf)
 
-### 3. Final Paper
+### Final Paper
 Scientific paper submitted in LNCS format describing the full implementation, validation, and ecological inferences extracted by the new functional annotation workflow.
+
+[Artigo_Final_LNCS.pdf](./Artigo_Final_LNCS.pdf)
 
 ---
 
@@ -58,9 +45,6 @@ Key features of the developed workflow:
 - **Eukaryotic Module:** Utilizes MetaEuk and reCOGnizer with the KOG database to extract core cellular mechanisms from complex, fragmented assemblies.
 - **The Master Table:** Converges all multi-domain outputs into standardized, genome-specific Integrated Annotation Tables.
 - **Metabolic Profiling:** Enables rapid filtering of KEGG Orthology (KO) identifiers, COG categories, and UniProt homologies, directly supporting downstream community metabolic modeling.
-<<<<<<< Updated upstream
 
 For installation prerequisites and execution instructions, see the 
-[`Snakemake-Workflow` branch](https://github.com/RodolfoFerreira/Projeto-Bioinf/tree/Snakemake-Workflow).
-=======
->>>>>>> Stashed changes
+[`pipeline` branch](https://github.com/RodolfoFerreira/Projeto-Bioinf/tree/pipeline).
