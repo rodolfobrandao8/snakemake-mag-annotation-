@@ -1,0 +1,4 @@
+sample	path	domain
+ecoli	data/ecoli.fasta	prok
+yeast	data/yeast.fasta	euk
+Paecilomyces_variotii_C data/Paecilomyces_variotii_C.fasta  euk

@@ -1,0 +1,29 @@
+sample_sheet: "/home/argomes/data/meta/EST6/results/domain/EST6/annotation_samples_test.tsv"
+
+prodigal:
+  extra: "-p meta -f gff"
+
+bakta:
+  db: "resources/bakta_db/db"
+  extra: "" 
+
+gtdbtk:
+  data_dir: "resources/gtdbtk_db"
+  extra: "" 
+
+metaeuk:
+  db: "resources/metaeuk_db/uniprot_db"
+  extra: "" 
+
+recognizer:
+  resources_dir: "resources/recognizer_db"
+  extra: ""
+
+upimapi:
+  db: "swissprot"
+  extra: "--resources-directory resources/upimapi_db --skip-db-check"
+
+threads:
+  high: 16
+  medium: 8
+  low: 1

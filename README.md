@@ -1,50 +1,33 @@
-# Bioinformatics workflow for taxonomic classification and functional annotation of multi-kingdom MAGs using Snakemake.
+# Snakemake workflow: MAG Annotation
 
+[![Snakemake](https://img.shields.io/badge/snakemake-≥8.0.0-brightgreen.svg)](https://snakemake.github.io)
+[![GitHub actions status](https://github.com/<owner>/<repo>/workflows/Tests/badge.svg?branch=main)](https://github.com/<owner>/<repo>/actions?query=branch%3Amain+workflow%3ATests)
+[![run with conda](http://img.shields.io/badge/run%20with-conda-3EB049?labelColor=000000&logo=anaconda)](https://docs.conda.io/en/latest/)
 
-Development of an Integrated Functional Annotation Workflow for Metagenome-Assembled Genomes.
+A best-practice Snakemake workflow for the **Annotation of Metagenome-Assembled Genomes (MAGs)**.
 
-**Author:** Rodolfo Ferreira  
-**Institution:** University of Minho  
-**Supervisors:** Andreia Salvador and Artur Gomes
+##  Pipeline Overview
 
----
+This workflow orchestrates several state-of-the-art bioinformatics tools to perform structural and functional annotation, as well as taxonomic classification. It takes assembled genomes (MAGs or isolates) in `*.fasta` or `*.fna` format as input.
 
-## Repository Structure
+1. **Structural Annotation / Gene Calling:** Predict protein-coding genes using `Prodigal` (prokaryotes) and `MetaEuk` (eukaryotes).
+2. **Comprehensive Genome Annotation:** Rapid and standard-compliant annotation with `Bakta`.
+3. **Functional Domain Annotation:** Identify COG/Pfam/CDD domains using `reCOGnizer`.
+4. **Protein Mapping:** Functional annotation via UniProt databases using `UPIMAPI`.
+5. **Taxonomic Classification:** Robust taxonomic assignment for all MAGs using `GTDB-Tk`.
 
-This repository contains the deliverables and source code for the project 
-**"Development of a Functional Annotation Workflow for Metagenome-Assembled Genomes"**.
+##  Configuration & Input Data
 
-| Branch | Contents |
-|--------|----------|
-| [`main`](https://github.com/RodolfoFerreira/Projeto-Bioinf/tree/main) | Project documents, paper, and deliverables (this branch) |
-| [`pipeline`](https://github.com/RodolfoFerreira/Projeto-Bioinf/tree/pipeline) | Snakemake workflow source code, environments, and configuration files |
+Detailed information about input data formats and workflow configuration parameters (such as database paths and tool-specific arguments) can be found in the [`config/README.md`](config/README.md).
 
----
+By default, the workflow expects:
+* A TSV sample sheet (`config/samples.tsv`) containing the paths to your `*.fasta` files.
+* A YAML configuration file (`config/config.yaml`) defining tool parameters and database locations.
 
-## Documents
+##  Usage
 
-### Project Presentation
-Slide deck presenting the project objectives, the multi-kingdom pipeline architecture, and the biological validation using an anaerobic biomass dataset.
+### 1. Deployment options
 
-[Apresentacao_Projeto.pdf](./Apresentacao_Projeto.pdf)
-
-### Final Paper
-Scientific paper submitted in LNCS format describing the full implementation, validation, and ecological inferences extracted by the new functional annotation workflow.
-
-[Artigo_Final_LNCS.pdf](./Artigo_Final_LNCS.pdf)
-
----
-
-## Project Summary
-
-Standard, prokaryote-optimized annotation pipelines frequently misclassify or exclude eukaryotic sequences in whole-community datasets. This project solves this challenge by developing a robust **Snakemake pipeline** for the integrated functional annotation of multi-kingdom Metagenome-Assembled Genomes (MAGs).
-
-Key features of the developed workflow:
-
-- **Prokaryotic Module:** Employs Bakta, Prodigal, UPIMAPI, and reCOGnizer for high-resolution structural and functional mapping.
-- **Eukaryotic Module:** Utilizes MetaEuk and reCOGnizer with the KOG database to extract core cellular mechanisms from complex, fragmented assemblies.
-- **The Master Table:** Converges all multi-domain outputs into standardized, genome-specific Integrated Annotation Tables.
-- **Metabolic Profiling:** Enables rapid filtering of KEGG Orthology (KO) identifiers, COG categories, and UniProt homologies, directly supporting downstream community metabolic modeling.
-
-For installation prerequisites and execution instructions, see the 
-[`pipeline` branch](https://github.com/RodolfoFerreira/Projeto-Bioinf/tree/pipeline).
+To run the workflow from the command line, change to the working directory of the project:
+```bash
+cd path/to/<repo>
