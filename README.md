@@ -1,5 +1,4 @@
-# Bioinformatics workflow for taxonomic classification and functional annotation of multi-kingdom MAGs using Snakemake.
-
+# Development of a Functional Annotation and Taxonomic Classification Workflow for Metagenome-Assembled Genomes
 
 Development of an Integrated Functional Annotation Workflow for Metagenome-Assembled Genomes.
 
