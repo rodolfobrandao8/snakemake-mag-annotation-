@@ -41,4 +41,4 @@ Key features of the developed workflow:
 - **Prokaryotic Module:** Employs Bakta, Prodigal, UPIMAPI, and reCOGnizer for high-resolution structural and functional mapping.
 - **Eukaryotic Module:** Utilizes MetaEuk and reCOGnizer with the KOG database to extract core cellular mechanisms from complex, fragmented assemblies.
 - **The Master Table:** Converges outputs into standardized, genome-specific Integrated Annotation Tables.
-- **Metabolic Profiling:** Enables rapid filtering of KEGG Orthology (KO) identifiers, COG categories, and UniProt homologies, directly supporting downstream community metabolic modeling.
+
