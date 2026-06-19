@@ -45,6 +45,3 @@ Key features of the developed workflow:
 - **Eukaryotic Module:** Utilizes MetaEuk and reCOGnizer with the KOG database to extract core cellular mechanisms from complex, fragmented assemblies.
 - **The Master Table:** Converges all multi-domain outputs into standardized, genome-specific Integrated Annotation Tables.
 - **Metabolic Profiling:** Enables rapid filtering of KEGG Orthology (KO) identifiers, COG categories, and UniProt homologies, directly supporting downstream community metabolic modeling.
-
-For installation prerequisites and execution instructions, see the 
-[`pipeline` branch](https://github.com/RodolfoFerreira/Projeto-Bioinf/tree/pipeline).
