@@ -14,7 +14,6 @@ This workflow orchestrates several state-of-the-art bioinformatics tools to perf
 2. **Comprehensive Genome Annotation:** Rapid and standard-compliant annotation with `Bakta`.
 3. **Functional Domain Annotation:** Identify COG/Pfam/CDD domains using `reCOGnizer`.
 4. **Protein Mapping:** Functional annotation via UniProt databases using `UPIMAPI`.
-5. **Taxonomic Classification:** Robust taxonomic assignment for all MAGs using `GTDB-Tk`.
 
 ##  Configuration & Input Data
 
@@ -24,10 +23,6 @@ By default, the workflow expects:
 * A TSV sample sheet (`config/samples.tsv`) containing the paths to your `*.fasta` files.
 * A YAML configuration file (`config/config.yaml`) defining tool parameters and database locations.
 
-##  Usage
 
-### 1. Deployment options
 
-To run the workflow from the command line, change to the working directory of the project:
-```bash
-cd path/to/<repo>
+
